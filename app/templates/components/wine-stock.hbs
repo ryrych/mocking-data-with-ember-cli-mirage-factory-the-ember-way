@@ -1,0 +1,18 @@
+<h1>Wine Stock</h1>
+
+<form {{action "submit" on="submit"}}>
+  {{#x-select value=selectedWine class="dropdown" }}
+    {{#each wines as |wine|}}
+      {{#x-option value=wine}}{{ wine.name }} ({{ wine.quantity }}){{/x-option}}
+    {{/each}}
+  {{/x-select}}
+
+  {{input class="quantity" type="number" value=selectedQuantity}}
+  <button class="button">Sell</button>
+</form>
+
+<ul class="wines">
+  {{#each wines as |wine|}}
+    <li class="wine">{{ wine.name }} ({{ wine.quantity }})</li>
+  {{/each}}
+</ul>
